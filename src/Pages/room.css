@@ -1,0 +1,58 @@
+.room_page_container{
+    background-color:rgb(231 231 231);
+    height: 100%;
+}
+.table_section_rooms{
+    display: grid;
+    place-items: center;
+    height: 100%;
+    overflow-y: scroll;
+
+    
+}
+
+.navbar_sec{
+    position: sticky;
+    top: 0;
+}
+
+.btn_section_addroom{
+    display: flex;
+    justify-content: flex-end;
+   margin:20px;
+}
+
+
+.header,.content_table {
+
+  display: grid;
+  place-items: center;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+  border: 0.5px solid lightgray;
+  height: 52px;
+  background-color: white;
+  width: 90%;
+}
+
+
+
+.heading_sec{
+    width: 20%;
+    display: grid;
+    place-items: center;
+    align-items: center;
+    height: 50px;
+    z-index: -1;
+}
+
+.id_room{
+    color: orange;
+}
+.popupwindow{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    backdrop-filter: blur(2px);
+
+}

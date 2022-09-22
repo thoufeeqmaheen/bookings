@@ -1,0 +1,50 @@
+.booking_heading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 60px;
+    margin-top: 10px;
+
+}
+
+
+.bookingcontainer{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(231 231 231);
+}
+
+.header_booking,.content_table_booking{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    border: 0.5px solid lightgray;
+    height: 52px;
+    background-color: white;
+    width: 90%;
+}
+
+.table_section_rooms{
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 753px) {
+
+
+
+    .header_booking,.content_table_booking{
+        display: grid;
+        place-items: center;
+        grid-template-columns: auto;
+        border: 0.5px solid lightgray;
+       height: 100%;
+        background-color: white;
+        width: 90%;
+        padding: 20px;
+    }
+    .header_options,.content_values{
+        margin: 10px;
+    }
+  }

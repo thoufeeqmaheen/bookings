@@ -1,0 +1,23 @@
+.checkComponent{
+    padding: 30px;
+    background-color: white;
+    border-radius: 13px;
+}
+
+.header_check{
+    display: flex;
+    align-items:center ;
+    gap: 20px;
+
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.content_check{
+    height: 170px;
+    overflow-y: scroll;
+    margin-top: 10px
+
+}

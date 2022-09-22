@@ -1,0 +1,13 @@
+.checkdatacontainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 1px solid lightgray;
+    padding: 10px;
+    align-items: center;
+    font-size: small;
+    
+}
+
+.top_sec label{
+    font-weight: bold;
+}
