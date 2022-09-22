@@ -1,17 +1,21 @@
 .newbooking_container{
     background-color:rgb(231 231 231);
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
 .header_sec{
     width: 100%;
-   margin-left: 20px;
+   margin-left: 65px;
     margin-top: 10px;
 }
 
 .form_container{
     width: 90%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+   
  
 }
 .input_data_container{
@@ -26,3 +30,22 @@
     place-items: center;
 }
 
+.inputdata_sec{
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+}
+
+.room_result_sec{
+    margin-top: 20px
+}
+
+._btn{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+
+
+}

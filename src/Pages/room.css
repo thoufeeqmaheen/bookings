@@ -42,6 +42,7 @@
     place-items: center;
     align-items: center;
     height: 50px;
+    margin-left: 15px;
     z-index: -1;
 }
 

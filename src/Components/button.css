@@ -5,4 +5,10 @@ place-items: center;
 cursor: pointer;
 border: none;
 outline: none;
+border-radius: 5px;
+height: 30px;
+}
+
+.secondary{
+    border: 1px solid orange;
 }
