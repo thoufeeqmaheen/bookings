@@ -4,6 +4,7 @@ import InputComponent from "./InputComponent";
 import "./addroom.css";
 import Selectround from "./Selectround";
 import { useEffect } from "react";
+import apiCall from "../Sevices/apiCall";
 
 function AddRoomComponent({ setAddroom ,editingId,setEditingId,roomData}) {
 
@@ -15,7 +16,7 @@ function AddRoomComponent({ setAddroom ,editingId,setEditingId,roomData}) {
   });
 
   useEffect(()=>{
-    if(editingId)setFormData(roomData.find(r=>r.Id === editingId))
+    if(editingId)setFormData(roomData.find(r=>r.id === editingId))
   },[editingId])
 
   const {roomNumber,adultCapacity,childCapacity,price} = formData;
@@ -29,10 +30,21 @@ function AddRoomComponent({ setAddroom ,editingId,setEditingId,roomData}) {
 
   const [ selectArray,setSelectArray] = useState([]);
 
-  const SendData = (e) => {
+  const SendData = async(e) => {
     e.preventDefault();
+    let res;
+    if(editingId){
+      res = await updateRoom();
+    }else{
+      res = await addRoom();
+    }
+    console.log(res);
     closeWindow();
   };
+
+  const addRoom = ()=>apiCall("/rooms","POST",formData)
+  const updateRoom = ()=>apiCall(`/rooms/${formData.id}`,"PUT",formData)
+
 
   const closeWindow = ()=>{
     setAddroom(false);

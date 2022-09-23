@@ -2,17 +2,24 @@ import React, { useState } from "react";
 import Button from "../Components/Button";
 import Navbar from "../Components/Navbar";
 import "./room.css";
-import { rooms } from "../ServiceData/Room";
 import AddRoomComponent from "../Components/AddRoomComponent";
+import { useEffect } from "react";
+import apiCall from "../Sevices/apiCall";
 
 function Room() {
-  const [roomData, setRoomData] = useState(rooms);
-  const [addroom, setAddroom] = useState(false);
+  const [roomData, setRoomData] = useState([]);
+  const [addRoom, setAddroom] = useState(false);
   const [editingId,setEditingId] = useState(null);
-  console.log(addroom);
 
-  function popuproom() {
-    console.log(addroom);
+  useEffect(()=>{
+    apiCall("/rooms","GET")
+    .then(response=>{
+      setRoomData(response);
+    })
+  },[addRoom])
+
+  function popupRoom() {
+    console.log(addRoom);
     setAddroom(true);
   }
 
@@ -33,7 +40,7 @@ function Room() {
           color="white"
           back="orange"
           width="100px"
-          functionality={popuproom}
+          functionality={popupRoom}
           
         />
       </div>
@@ -58,13 +65,13 @@ function Room() {
           adultCapacity,
           childCapacity,
           price,
-          Id
+          id
         }) => {
           return (
             <div onClick={()=>{
-              setEditingId(Id);
+              setEditingId(id);
               setAddroom(true)
-            }} className="content_table" key={Id}>
+            }} className="content_table" key={id}>
               <div className="content_values id_room">{roomNumber}</div>
               <div className="content_values">{adultCapacity}</div>
               <div className="content_values">{childCapacity}</div>
@@ -73,9 +80,9 @@ function Room() {
           );
         })}
       </div>
-      <div className={addroom ? "popupwindow" : ""}>
+      <div className={addRoom ? "popupwindow" : ""}>
         
-        {addroom && <AddRoomComponent
+        {addRoom && <AddRoomComponent
             roomData={roomData}
             editingId={editingId}
             setEditingId={setEditingId}
