@@ -1,3 +1,8 @@
+html,body,#root,.room_page_container{
+    height: 100%;
+}
+
+
 .room_page_container{
     background-color:rgb(231 231 231);
     height: 100%;
@@ -5,10 +10,6 @@
 .table_section_rooms{
     display: grid;
     place-items: center;
-    height: 100%;
-    overflow-y: scroll;
-
-    
 }
 
 .navbar_sec{
@@ -27,7 +28,7 @@
 
   display: grid;
   place-items: center;
-  grid-template-columns: 2fr 2fr 2fr 2fr;
+  grid-template-columns: repeat(5,1fr);
   border: 0.5px solid lightgray;
   height: 52px;
   background-color: white;
@@ -55,5 +56,46 @@
     position: fixed;
     top: 0;
     backdrop-filter: blur(2px);
+    display: grid;
+    place-items: center;
 
+}
+
+
+.action-button img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.action-section{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.delete-popup{
+    background-color: white;
+    margin: auto;
+    padding: 40px;
+    box-shadow: 1px 1px 5px #0005;
+    display: grid;
+    place-items: center;
+    gap: 25px;
+}
+
+.delete-popup-action-buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.delete-popup-action-buttons button{
+    padding: 7px 15px;
+    cursor: pointer;
+    border: none;
+}
+
+.delete-button{
+    background-color: #222;
+    color: white;
 }
